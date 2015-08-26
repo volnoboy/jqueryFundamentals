@@ -6,7 +6,8 @@
 </head>
 <body>
 <h1>You finally doing it</h1>
-<div id="myContent" class="textBlock">Simple div!</div>
+<div id="myContent" class="textBlock" title="simple">Simple div!</div>
+<div title="complicated">Complicated div!</div>
 <p class="textBlock">Simple p!</p>
 
 
@@ -14,8 +15,7 @@
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $('.textBlock').css('border', '2px solid purple');
-                $('p.textBlock').css('border', '2px solid red');
+                $('div[title]').css('border', '2px solid purple');
             }
     );
 </script>
