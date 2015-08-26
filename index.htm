@@ -6,15 +6,16 @@
 </head>
 <body>
 <h1>You finally doing it</h1>
-<div id="myContent">Simple div!</div>
-<p>Simple p!</p>
+<div id="myContent" class="textBlock">Simple div!</div>
+<p class="textBlock">Simple p!</p>
 
 
 <script src="scripts/jquery-1.11.3.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $('#myContent').html('Not simple div!');
+                $('.textBlock').css('border', '2px solid purple');
+                $('p.textBlock').css('border', '2px solid red');
             }
     );
 </script>
