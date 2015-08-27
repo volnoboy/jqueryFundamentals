@@ -11,11 +11,17 @@
 <p class="textBlock">Simple p!</p>
 <input type="radio"/>
 <input type="text"/></body><br>
-<textarea></textarea>
+<textarea>information sample</textarea>
 <select id="state">
     <option value="AZ">AZ</option>
     <option value="CA" selected="true">CA</option>
 </select>
+<table>
+    <tr><td>First row</td></tr>
+    <tr><td>Second row</td></tr>
+    <tr><td>Third row</td></tr>
+    <tr><td>Forth row</td></tr>
+</table>
 
 
 
@@ -23,13 +29,14 @@
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $(':input').css('background-color', 'purple');
+                $(':input:contains("information")').css('background-color', 'white');
                 $('input').css('background-color', 'blue');
-                $(':input').each(
-                    function() {
-                    var element = $(this);
-                    alert(element.val());
-                });
+                $('tr:even').css('background-color', 'pink');
+                $('tr:odd').css('background-color', 'red');
+                $('div[title*="p"]').css('background-color', 'yellow');
+                $('div[title$="le"]').css('background-color', 'red');
+                $('div[title^="com"]').css('background-color', 'blue');
+
             }
     );
 </script>
