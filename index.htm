@@ -30,11 +30,10 @@
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $('tr').each(function(index) {
-                  this.title = "New Title";
-                    $(this).attr({title: 'New Title 2', atr: 45 })
-                            .css('background-color', 'purple');
-                });
+                $('#output').append('<span class="append" style="color : aqua">hidden span 2</span>');
+                $('#output').prepend('<span class="append" style="color : mediumpurple">hidden span 1</span>');
+                $('span.append').wrap('<div class="wrapper" style="background-color: chocolate"/>');
+                $('textarea').remove();
             }
     );
 </script>
