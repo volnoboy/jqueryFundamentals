@@ -30,14 +30,11 @@
 <script type="text/javascript">
     $(document).ready(
             function() {
-                var html = '';
-
-                $('div').each(function(index) {
-                  html += "<br />" + index + " " + $(this).text();
+                $('tr').each(function(index) {
+                  this.title = "New Title";
+                    $(this).attr({title: 'New Title 2', atr: 45 })
+                            .css('background-color', 'purple');
                 });
-
-                var output = $('#output');
-                output.html(html);
             }
     );
 </script>
