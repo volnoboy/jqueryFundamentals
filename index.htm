@@ -9,13 +9,27 @@
 <div id="myContent" class="textBlock" title="simple">Simple div!</div>
 <div title="complicated">Complicated div!</div>
 <p class="textBlock">Simple p!</p>
+<input type="radio"/>
+<input type="text"/></body><br>
+<textarea></textarea>
+<select id="state">
+    <option value="AZ">AZ</option>
+    <option value="CA" selected="true">CA</option>
+</select>
+
 
 
 <script src="scripts/jquery-1.11.3.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $('div[title="complicated"]').css('border', '2px solid purple');
+                $(':input').css('background-color', 'purple');
+                $('input').css('background-color', 'blue');
+                $(':input').each(
+                    function() {
+                    var element = $(this);
+                    alert(element.val());
+                });
             }
     );
 </script>
