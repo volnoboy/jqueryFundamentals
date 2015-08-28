@@ -10,8 +10,8 @@
 <div title="complicated">Complicated div!</div>
 <p class="textBlock">Simple p!</p>
 <input type="radio"/>
-<input type="text"/></body><br>
-<textarea>information sample</textarea>
+<input onfocus="FocusBlur(this)" onblur="FocusBlur(this)" type="text"/></body><br>
+<textarea onfocus="FocusBlur(this)" onblur="FocusBlur(this)">information sample</textarea>
 <select id="state">
     <option value="AZ">AZ</option>
     <option value="CA" selected="true">CA</option>
@@ -30,12 +30,13 @@
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $('td').css({
-                    'color' : 'green',
-                    'font-size' : '20px'
-                }).css('font-weight', 'bold');
+                $('td').addClass('Highlight').addClass('Purple').removeClass('Highlight');
             }
     );
+
+    function FocusBlur(element) {
+        $(element).toggleClass('Highlight');
+    }
 </script>
 <script src="scripts/main.js" type="text/javascript"></script>
 
