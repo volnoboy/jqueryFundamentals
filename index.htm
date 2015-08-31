@@ -42,7 +42,11 @@
 
     function changeSelect() {
         $('#state').change(function() {
-           $('#output').html($('#state').val());
+           if($('#state').val() == 'AZ') {
+               $('#header').off('mouseup');
+            } else {
+               $('#header').on('mouseup', mouseActions );
+           }
         });
     }
 
@@ -53,15 +57,15 @@
     }
 
     function mouseEvents() {
-        $('h1').mouseenter(function() {
-            ToggleHighlight(this);
-            $(this).css('cursor', 'pointer');
-        }).mouseleave(function() {
-                    $(this).toggleClass('Highlight');
-        }).mouseup(function(e) {
+        $('#header').on('mouseenter mouseleave mouseup', mouseActions);
+    }
+
+    function mouseActions(e) {
+        $(this).toggleClass('Highlight');
+        $(this).css('cursor', 'pointer');
+        if (e.type == 'mouseup') {
             $(this).text($(this).text() + ' X: ' + e.pageX + ' Y: ' + e.pageY);
-            alert($(e.target).attr('id'));
-        });
+        }
     }
 
     function ToggleHighlight(element) {
