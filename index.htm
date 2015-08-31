@@ -17,9 +17,9 @@
     <option value="CA" selected="true">CA</option>
 </select>
 <table>
-    <tr><td>First row</td></tr>
+    <tr><td onclick="tableClick()">First row</td></tr>
     <tr><td>Second row</td></tr>
-    <tr><td>Third row</td></tr>
+    <tr><td id="thirdRow">Third row</td></tr>
     <tr><td>Forth row</td></tr>
 </table>
 
@@ -30,12 +30,22 @@
 <script type="text/javascript">
     $(document).ready(
             function() {
-                $('td').addClass('Highlight').addClass('Purple').removeClass('Highlight');
+                thirdRowClick();
             }
     );
 
     function FocusBlur(element) {
         $(element).toggleClass('Highlight');
+    }
+
+    function tableClick() {
+        alert("Table clicked");
+    }
+
+    function thirdRowClick() {
+        $('#thirdRow').click( function () {
+            $('#thirdRow').toggleClass('Highlight');
+        });
     }
 </script>
 <script src="scripts/main.js" type="text/javascript"></script>
